@@ -1,7 +1,7 @@
 const { readFileSync, writeFileSync } = require('fs')
 console.log('start')
 
-const lines = ["Hello", "Hello", "Hello"]
+const lines = ["Hello\n", "Hello\n", "Hello"]
 
 lines.forEach(line => {
     writeFileSync(
