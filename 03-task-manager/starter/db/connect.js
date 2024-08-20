@@ -11,7 +11,3 @@ const connectDB = (url) => {
 }
 
 module.exports = connectDB
-
-
-// .then(() => console.log("Connected to the database..."))
-// .catch((err) => console.log("An error occurred", err))
