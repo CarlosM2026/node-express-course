@@ -15,10 +15,6 @@ const logger = (req, res, next) => {
     next() 
 }
 
-// const newEntry = (req, res, next) => {
-//     people = [...people, name]
-//     next() 
-//}
 app.use(express.static("./public"))
 
 app.use(express.urlencoded({ extended: false }));
@@ -27,25 +23,6 @@ app.use(express.json());
 app.use('/api/v1/people',peopleRouter)
 app.use(logger)
 
-//app.use('/api/v1/people', newEntry)
-
-
-// app.get('/api/v1/people', (req, res) => {
-//     res.json({peopleData: people})
-// })
-
-
-// app.post('/api/v1/people', (req, res) => {
-//     const {name} = req.body
-
-//     if (!name) {
-//         res.status(400).json({ success: false, message: "Please provide a name" });
-//     }
-
-//     people.push({ id: people.length + 1, name: req.body.name });
-//     res.status(201).json({ success: true, name: req.body.name });
-
-// })
 
 
 app.get('/api/v1/test',(req,res) => {
