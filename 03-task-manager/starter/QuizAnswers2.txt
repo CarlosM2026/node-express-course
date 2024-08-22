@@ -1,0 +1,20 @@
+In this lesson, you created a middleware function called asyncWrapper. Why?
+
+We used asynchronous wrappers for the try-catch statements because the 
+code was very repetitive and it was getting very jumbled up. It refactors the code pretty well. 
+
+
+
+
+
+Suppose that you want to make sure that both a status code and an error message are sent back to the user when they request the URL for a task that does not exist. Assume that you’ve created a CustomAPIError class and an error handler that references that class. Complete the code:
+const getTask = asyncWrapper(async (req, res, next) => {  
+  const { id: taskID } = req.params;  
+  const task = await Task.findOne({ _id: taskID });  
+  if (!task) {  
+    // your code here  
+    const err = createCustomError('The resource does not exist', 404)
+    next(err)
+  }  
+  res.status(200).json({ task });  
+});  
